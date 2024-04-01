@@ -1,0 +1,68 @@
+.location_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  z-index: 1;
+  position: relative;
+}
+
+.location_tool {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  border-radius: 10px;
+  background: #135fe2;
+  box-shadow: 24px 24px 48px #1051c0, -24px -24px 48px #166dff;
+}
+
+.destination_location,
+.from_location {
+  background-color: #eef8ff;
+  width: 100%;
+  padding: 5px;
+}
+
+.from_location {
+  border-start-start-radius: 10px;
+  border-start-end-radius: 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.236);
+}
+
+.destination_location {
+  border-end-end-radius: 10px;
+  border-end-start-radius: 10px;
+}
+
+.destination_location svg {
+  width: 30px;
+  color: #152d5c;
+  font-size: 1.4rem;
+}
+
+.from_location svg {
+  width: 30px;
+  color: #152d5c;
+  font-size: 1.2rem;
+}
+
+.location_tool input {
+  width: 80%;
+  padding: 10px;
+  height: 45px;
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+  background-color: #eef8ff;
+}
+
+.location_tool input:focus {
+  outline: none;
+}
+
+.location_tool input::placeholder {
+  font-size: 1.1rem;
+  opacity: 0.5;
+}

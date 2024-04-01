@@ -1,0 +1,107 @@
+.services_container_cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.services_container_cards a {
+  text-decoration: none;
+}
+
+.transport_container {
+  display: flex;
+  height: 140px;
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: -5px 10px 5px 5px rgba(0, 0, 0, 0.115);
+}
+
+.transport_image {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #184490;
+  /* border-start-start-radius: 20px;
+  border-end-start-radius: 20px; */
+}
+
+.transport_image {
+  filter: contrast(1);
+}
+
+.transport_image svg {
+  color: white;
+  padding: 25px;
+  color: #ffffff;
+  font-size: 10rem;
+  height: 120px;
+}
+
+.transport_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 0px 0px 10px;
+  gap: 5px;
+  line-height: 1rem;
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.155);
+  border-left: none;
+}
+
+.service_name {
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 0.05rem;
+  color: #152d5c;
+  filter: contrast(1.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px 0px 0px;
+}
+
+.transport_container:hover {
+  transform: scale(1.05);
+}
+
+.numero_de_rutas {
+  width: fit-content;
+  opacity: 0.9;
+  padding: 5px;
+  border-radius: 10px;
+  font-weight: 1000;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #152d5c;
+}
+.status_service {
+  background-color: #1b77f5;
+  font-weight: 1000;
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  letter-spacing: 0.7px;
+  width: fit-content;
+}
+
+.transport_info > .service_name svg {
+  opacity: 0;
+  transition: opacity 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.transport_container:hover > .transport_info > .service_name svg {
+  opacity: 1;
+}
