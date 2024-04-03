@@ -1,6 +1,12 @@
 .main_container {
   min-height: 100vh;
   background-color: #dcdcdc;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.main_container::-webkit-scrollbar {
+  display: none;
 }
 
 .main_container::before {
@@ -22,4 +28,3 @@
 .page-transition-exit {
   opacity: 0;
 }
-

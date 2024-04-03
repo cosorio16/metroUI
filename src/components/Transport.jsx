@@ -1,7 +1,10 @@
 import React from "react";
+import { useLocation, Link } from "react-router-dom";
 import { globalTransport } from "../store/globalTransport";
 import transmetroData from "../data/csvjson";
-import { useLocation, Link } from "react-router-dom";
+import "../styles/Transport.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationPin } from "@fortawesome/free-solid-svg-icons";
 
 function Transport() {
   const { service } = globalTransport();
@@ -14,11 +17,15 @@ function Transport() {
     <>
       <div className="transport_container_view">
         <button onClick={() => history.back()}>Atras</button>
-        <h1>{service}</h1>
-        <div className="map">Mapa</div>
-        {paradas.map((parada) => (
-          <p>{parada}</p>
-        ))}
+        <div className="mapa_paradas"></div>
+        <div className="paradas_container_menu">
+          {paradas.map((parada, index) => (
+            <p key={index}>
+              <FontAwesomeIcon icon={faLocationPin} />
+              {parada}
+            </p>
+          ))}
+        </div>
       </div>
     </>
   );

@@ -52,9 +52,9 @@ function App() {
       <div
         className={`main_container `}
       >
-        <button className="bars_nav">
+        {/* <button className="bars_nav">
           <FontAwesomeIcon icon={faBars} />
-        </button>
+        </button> */}
         <div className="location_tool_bar">
           <Location></Location>
         </div>

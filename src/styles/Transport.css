@@ -1,0 +1,50 @@
+.transport_container_view {
+  height: 100vh;
+  max-width: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mapa_paradas {
+  height: 50%;
+  min-height: 50%;
+}
+
+.paradas_container_menu {
+  overflow-y: scroll;
+  position: relative;
+  flex-grow: 1;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #174db6;
+  scrollbar-width: none;
+}
+
+.paradas_container_menu::-webkit-scrollbar {
+  display: none;
+}
+
+.paradas_container_menu p {
+  padding: 5px;
+  border-radius: 16px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: #152d5c;
+  color: #eef8ff;
+  border: 1px solid #eef8ff81;
+  cursor: pointer;
+}
+
+.paradas_container_menu svg {
+  border: 1px solid #eef8ff;
+  padding: 5px;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  color: #eef8ff;
+}

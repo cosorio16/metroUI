@@ -19,7 +19,11 @@ svg {
 body {
   margin: 0;
   height: 100dvh;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
+
+
 
 h1,
 h2,
@@ -43,6 +47,10 @@ button {
 ::selection {
   color: none;
   background-color: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .loader {
