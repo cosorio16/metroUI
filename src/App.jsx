@@ -49,9 +49,7 @@ function App() {
 
   return (
     <>
-      <div
-        className={`main_container `}
-      >
+      <div className={`main_container `}>
         {/* <button className="bars_nav">
           <FontAwesomeIcon icon={faBars} />
         </button> */}
@@ -75,7 +73,6 @@ function App() {
             numberOfRutes={alimentadores.length}
           ></Card>
         </div>
-        <div className="shedule_transport_service"></div>
       </div>
     </>
   );

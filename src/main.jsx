@@ -6,6 +6,7 @@ import transmetroData from "./data/csvjson.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import View from "./components/View.jsx";
 import Transport from "./components/Transport.jsx";
+import Map from "./components/Map.jsx";
 
 const homeSections = ["Troncales", "Expresos", "Alimentadores"];
 
@@ -17,6 +18,10 @@ const routes = [
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "mapa",
+    element: <Map />,
   },
 ];
 
