@@ -8,6 +8,7 @@ import View from "./components/View.jsx";
 import Transport from "./components/Transport.jsx";
 import Map from "./components/Map.jsx";
 
+
 const homeSections = ["Troncales", "Expresos", "Alimentadores"];
 
 const buses = [

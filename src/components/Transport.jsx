@@ -20,11 +20,12 @@ function Transport() {
   return (
     <>
       <div className="transport_container_view">
-        <button onClick={() => history.back()}>Atras</button>
         <div className="mapa_paradas">
           <Map />
         </div>
         <div className="paradas_container_menu">
+          <button onClick={() => history.back()}>Atras</button>
+
           <button className="expand_paradas_container">
             Pantalla Completa
           </button>
