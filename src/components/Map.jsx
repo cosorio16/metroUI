@@ -5,6 +5,7 @@ import transmetroData from "../data/csvjson";
 import "leaflet/dist/leaflet.css";
 import "../styles/Map.css";
 import { globalTransport } from "../store/globalTransport";
+import BusIcon from "./BusIcon";
 
 function Map() {
   const { service } = globalTransport();
@@ -27,8 +28,6 @@ function Map() {
 
   const limeOptions = { color: "blue" };
 
-  console.log(coordenadas.map((coordenada) => coordenada.coordenadaX));
-
   return (
     <MapContainer center={positionLocation} zoom={15} scrollWheelZoom={false}>
       <TileLayer
@@ -37,8 +36,13 @@ function Map() {
       />
 
       {coordenadas.map((coordenada, index) => (
-        <Marker position={[coordenada.coordenadaY, coordenada.coordenadaX]}>
-          <Popup>{coordenada.secuencieStop + " - " + coordenada.coordenadaName}</Popup>
+        <Marker
+          position={[coordenada.coordenadaY, coordenada.coordenadaX]}
+          icon={BusIcon}
+        >
+          <Popup>
+            {coordenada.secuencieStop + " - " + coordenada.coordenadaName}
+          </Popup>
         </Marker>
       ))}
 
