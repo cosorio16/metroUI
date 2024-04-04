@@ -63,3 +63,8 @@
   align-items: center;
   justify-content: center;
 }
+
+.buttons_nav_paradas button > svg {
+  width: 30px;
+  height: 30px;
+}

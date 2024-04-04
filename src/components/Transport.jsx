@@ -31,8 +31,8 @@ function Transport() {
         <div
           className="paradas_container_menu"
           style={{
-            height: paradasShow ? "50%" : "40px",
-         
+            height: paradasShow ? "50%" : "70px",
+            justifyContent: paradasShow ? "" : "center",
           }}
         >
           <div className="buttons_nav_paradas">
@@ -52,10 +52,16 @@ function Transport() {
             </button>
           </div>
           {paradas.map((parada, index) => (
-            <p key={index}>
-              <FontAwesomeIcon icon={faLocationPin} />
-              {parada}
-            </p>
+            <>
+              {paradasShow ? (
+                <p key={index}>
+                  <FontAwesomeIcon icon={faLocationPin} />
+                  {parada}
+                </p>
+              ) : (
+                ""
+              )}
+            </>
           ))}
         </div>
       </div>
