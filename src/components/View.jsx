@@ -5,33 +5,21 @@ import "../styles/View.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowLeft,
-  faArrowRight,
   faBus,
   faHouse,
   faMapPin,
   faMapLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
-import { globalTransport } from "../store/globalTransport";
 import transmetroData from "../data/csvjson";
 
-function View({ serviceName }) {
+function View({ serviceName, transport }) {
   const location = useLocation();
   const [isVisible, setIsVisible] = useState(false);
-  const { transport, service } = globalTransport((state) => ({
-    transport: state.transport,
-    service: state.service,
-  }));
 
   useEffect(() => {
     setIsVisible(true);
   }, [location]);
-
-  const setBus = (bus) => {
-    globalTransport.setState({
-      service: bus,
-    });
-  };
 
   // page-transition ${
   //   isVisible ? "" : "page-transition-exit"
@@ -85,11 +73,7 @@ function View({ serviceName }) {
                 </div>
               </div>
               <Link to={`/${t.replace(/ /g, "")}`}>
-                <button
-                  key={"999" + t}
-                  onClick={() => setBus(t || "")}
-                  className="view_rutes"
-                >
+                <button key={"999" + t} className="view_rutes">
                   <FontAwesomeIcon icon={faMapLocationDot} />
                   Ver Ruta
                 </button>

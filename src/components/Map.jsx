@@ -1,15 +1,19 @@
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { Polyline } from "react-leaflet";
+import {
+  MapContainer,
+  Polyline,
+  TileLayer,
+  Marker,
+  Popup,
+  useMapEvents,
+} from "react-leaflet";
 import transmetroData from "../data/csvjson";
 import "leaflet/dist/leaflet.css";
 import "../styles/Map.css";
-import { globalTransport } from "../store/globalTransport";
 import BusIcon from "./BusIcon";
+import GoTo from "./GoTo";
 
-function Map() {
-  const { service } = globalTransport();
-
+function Map({ service, secuencie, open }) {
   const coordenadas = transmetroData
     .filter((parada) => parada["Nombre ruta"] === service)
     .map((bus) => ({
@@ -24,9 +28,9 @@ function Map() {
     coordenada["coordenadaX"],
   ]);
 
-  const positionLocation = paradasVector[0];
-
   const limeOptions = { color: "blue" };
+
+  const positionLocation = paradasVector[0];
 
   return (
     <MapContainer center={positionLocation} zoom={15} scrollWheelZoom={false}>
@@ -37,6 +41,7 @@ function Map() {
 
       {coordenadas.map((coordenada, index) => (
         <Marker
+          key={index}
           position={[coordenada.coordenadaY, coordenada.coordenadaX]}
           icon={BusIcon}
         >
@@ -45,6 +50,19 @@ function Map() {
           </Popup>
         </Marker>
       ))}
+
+      <GoTo
+        position={{
+          lat: coordenadas[secuencie].coordenadaY,
+          lng: coordenadas[secuencie].coordenadaX,
+        }}
+        paradeNameGo={
+          coordenadas[secuencie].secuencieStop +
+          " - " +
+          coordenadas[secuencie].coordenadaName
+        }
+        open={open}
+      />
 
       <Polyline pathOptions={limeOptions} positions={paradasVector} />
     </MapContainer>

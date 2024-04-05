@@ -1,21 +1,28 @@
 .services_container_cards {
   display: flex;
+  width: 100%;
   flex-direction: column;
   gap: 20px;
   padding: 20px;
   position: relative;
   z-index: 1;
+  align-items: center;
 }
 
 .services_container_cards a {
   text-decoration: none;
+  width: 100%;
+  max-width: 750px;
 }
 
 .transport_container {
   display: flex;
+  width: 100%;
   height: 140px;
   transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   box-shadow: -5px 10px 5px 5px rgba(0, 0, 0, 0.115);
+  max-width: 750px;
+  margin: 0 auto;
 }
 
 .transport_image {
@@ -37,7 +44,7 @@
   padding: 25px;
   color: #ffffff;
   font-size: 10rem;
-  height: 120px;
+  height: 70px;
 }
 
 .transport_info {
@@ -67,10 +74,6 @@
   padding: 0px 10px 0px 0px;
 }
 
-.transport_container:hover {
-  transform: scale(1.05);
-}
-
 .numero_de_rutas {
   width: fit-content;
   opacity: 0.9;
@@ -95,13 +98,4 @@
   font-size: 1rem;
   letter-spacing: 0.7px;
   width: fit-content;
-}
-
-.transport_info > .service_name svg {
-  opacity: 0;
-  transition: opacity 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-}
-
-.transport_container:hover > .transport_info > .service_name svg {
-  opacity: 1;
 }

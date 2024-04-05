@@ -16,6 +16,7 @@
   border-radius: 10px;
   background: #135fe2;
   box-shadow: 24px 24px 48px #1051c0, -24px -24px 48px #166dff;
+  max-width: 500px;
 }
 
 .destination_location,

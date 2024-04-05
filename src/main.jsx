@@ -1,42 +1,58 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
-import transmetroData from "./data/csvjson.js";
+import { useEffect, useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import App from "./App.jsx";
+import transmetroData from "./data/csvjson.js";
 import View from "./components/View.jsx";
 import Transport from "./components/Transport.jsx";
-import Map from "./components/Map.jsx";
-
-
-const homeSections = ["Troncales", "Expresos", "Alimentadores"];
-
-const buses = [
-  ...new Set(transmetroData.map((bus) => bus["Nombre ruta"].replace(/ /g, ""))),
-];
+import "./index.css";
 
 const routes = [
   {
     path: "/",
     element: <App />,
   },
-  {
-    path: "mapa",
-    element: <Map />,
-  },
 ];
 
-homeSections.forEach((section) => {
+const homeSections = ["Troncales", "Expresos", "Alimentadores"];
+
+const transmetroServices = [
+  ...new Set(transmetroData.map((ruta) => ruta["Nombre ruta"])),
+];
+
+const alimentadores = transmetroServices
+  .slice(0, 28)
+  .concat(transmetroServices[31])
+  .concat(transmetroServices[41]);
+
+const troncales = transmetroServices
+  .slice(28)
+  .filter((bus) => bus !== "U30 Corredor Universitario");
+
+const expresos = troncales.filter((expreso) => {
+  const number = parseInt(expreso.match(/\d+/));
+  return number >= 10;
+});
+
+const transportMap = {
+  Troncales: troncales,
+  Expresos: expresos,
+  Alimentadores: alimentadores,
+};
+
+homeSections.map((section) => {
+  const transport = transportMap[section] || [];
   routes.push({
     path: section,
-    element: <View key={section} serviceName={section} />,
+    element: <View serviceName={section} transport={transport} />,
   });
 });
 
-buses.forEach((bus) => {
+transmetroServices.map((transmetroService) => {
   routes.push({
-    path: bus,
-    element: <Transport />,
+    path: transmetroService.replace(/ /g, ""),
+    element: <Transport service={transmetroService} />,
   });
 });
 
