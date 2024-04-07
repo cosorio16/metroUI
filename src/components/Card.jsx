@@ -4,10 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBus, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
-function Card({ transportName }) {
+function Card({ transportName, delay }) {
   const [numberOfRutes, setNumberOfRutes] = useState();
 
   useEffect(() => {
@@ -26,7 +25,10 @@ function Card({ transportName }) {
 
   return (
     <Link to={transportName.toLowerCase()}>
-      <div className="transport_container">
+      <div
+        className={`transport_container animated animatedFadeInUp fadeInUp`}
+        style={{ animationDelay: `${delay}` }}
+      >
         <div className="transport_image">
           <FontAwesomeIcon icon={faBus} />
         </div>

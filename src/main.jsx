@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { useEffect, useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import transmetroData from "./data/csvjson.js";
@@ -10,7 +9,7 @@ import "./index.css";
 
 const routes = [
   {
-    path: "/",
+    path: "",
     element: <App />,
   },
 ];
@@ -44,14 +43,14 @@ const transportMap = {
 homeSections.map((section) => {
   const transport = transportMap[section] || [];
   routes.push({
-    path: section,
+    path: `/${section}`,
     element: <View serviceName={section} transport={transport} />,
   });
 });
 
 transmetroServices.map((transmetroService) => {
   routes.push({
-    path: transmetroService.replace(/ /g, ""),
+    path: `/${transmetroService.replace(/ /g, "")}`,
     element: <Transport service={transmetroService} />,
   });
 });

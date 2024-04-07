@@ -1,0 +1,13 @@
+.signature_footer {
+  text-align: center;
+  font-weight: 1000;
+  background-color: #152d5c;
+  color: #eef8ff;
+  padding: 15px;
+  z-index: 9999;
+}
+
+.signature_footer a {
+  color: #eef8ff;
+  text-decoration: none;
+}

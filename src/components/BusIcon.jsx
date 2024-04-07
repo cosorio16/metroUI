@@ -1,4 +1,3 @@
-import React from "react";
 import { Icon } from "leaflet";
 
 const BusIcon = new Icon({

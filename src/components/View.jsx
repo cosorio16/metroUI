@@ -1,6 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../styles/View.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,22 +11,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 import transmetroData from "../data/csvjson";
+import Footer from "./Footer";
 
 function View({ serviceName, transport }) {
-  const location = useLocation();
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, [location]);
-
-  // page-transition ${
-  //   isVisible ? "" : "page-transition-exit"
-  // }
-
   return (
     <>
-      {isVisible ? <></> : <div className="loader"></div>}
       <div className={`view_container_pag `}>
         <div className="nav_view_pag">
           <button className="home_button_back">
@@ -42,7 +30,11 @@ function View({ serviceName, transport }) {
         </div>
         <div className="services">
           {transport.map((t, index) => (
-            <div key={index} className="service_card">
+            <div
+              key={index}
+              className="service_card animated animatedFadeInUp fadeInUp"
+              style={{ animationDelay: `${index * 80}ms` }}
+            >
               <h3 key={t}>{t}</h3>
               <div className="container_service_info">
                 <div className="service_first_stop">
@@ -82,6 +74,7 @@ function View({ serviceName, transport }) {
           ))}
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 }

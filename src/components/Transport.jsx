@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import transmetroData from "../data/csvjson";
 import "../styles/Transport.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

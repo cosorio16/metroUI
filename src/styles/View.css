@@ -16,6 +16,7 @@
   border-end-start-radius: 50px;
   background-color: #135fe2;
   box-shadow: 5px 5px 40px #1050c05f, -24px -24px 48px #166bff0d;
+  animation: zoom-in-zoom-out 1s ease;
 }
 
 .nav_view_pag {
@@ -24,7 +25,6 @@
   justify-content: space-between;
   padding: 70px 20px 0px 15px;
   z-index: 2;
-  box-shadow: -10px 5px 60px #b7c9d949, 10px -10px 10px #f7ffff47;
 }
 
 .home_button_back {
@@ -52,6 +52,7 @@
   align-items: center;
   gap: 10px;
   padding: 0px 10px 0px 10px;
+  animation: zoom-in-zoom-out 1s ease-out;
 }
 
 .service_card {
@@ -60,7 +61,7 @@
   padding: 10px;
   border-radius: 10px;
   background-color: white;
-  box-shadow: 1px 5px 20px 5px rgba(0, 0, 0, 0.115);
+  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.115);
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -104,7 +105,7 @@
   text-align: center;
   gap: 10px;
   width: 30%;
-  /* border-right: 1px solid rgba(0, 0, 0, 0.368); */
+ 
 }
 .service_last_stop {
   width: 30%;
@@ -125,7 +126,6 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* border-left: 1px solid rgba(0, 0, 0, 0.368); */
 }
 
 .view_rutes {
@@ -152,4 +152,3 @@ a {
 button {
   cursor: pointer;
 }
-

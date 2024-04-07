@@ -2,10 +2,8 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   padding: 20px;
-  position: relative;
-  z-index: 1;
   align-items: center;
 }
 
@@ -31,8 +29,6 @@
   align-items: center;
   justify-content: center;
   background-color: #184490;
-  /* border-start-start-radius: 20px;
-  border-end-start-radius: 20px; */
 }
 
 .transport_image {

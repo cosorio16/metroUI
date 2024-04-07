@@ -5,7 +5,6 @@ import {
   TileLayer,
   Marker,
   Popup,
-  useMapEvents,
 } from "react-leaflet";
 import transmetroData from "../data/csvjson";
 import "leaflet/dist/leaflet.css";
