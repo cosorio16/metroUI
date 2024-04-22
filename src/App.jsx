@@ -15,8 +15,8 @@ function App() {
           <Card transportName={"Expresos"} delay={".3s"}></Card>
           <Card transportName={"Alimentadores"} delay={".5s"}></Card>
         </div>
-      <Footer></Footer>
       </div>
+      <Footer></Footer>
     </>
   );
 }
